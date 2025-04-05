@@ -1,6 +1,6 @@
 "use client";
 import { AnimatePresence } from 'framer-motion';
-import Stairs from './Stairs';
+import Stairs from './Stairs.jsx';
 import { usePathname } from 'next/navigation';
 import React from 'react'
 
