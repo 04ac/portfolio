@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 /* Add this defensive rule to handle empty var() */
@@ -22,4 +20,12 @@
 body {
   background-color: var(--color-primary);
   color: var(--color-text);
+}
+
+@theme {
+  /* --breakpoint-*: initial; */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 968px;
+  --breakpoint-xl: 1280px;
 }
