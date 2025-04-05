@@ -23,6 +23,10 @@ const links = [
     {
         name: 'contact',
         path: '/contact'
+    },
+    {
+        name: 'control Panel',
+        path: '/control-panel'
     }
 ];
 
@@ -36,8 +40,7 @@ const DesktopNav = () => {
                 return <Link 
                     href={e.path}
                     key={idx}
-                    className={`${e.path === pathName && "text-[var(--color-accent)] border-b-2 border-[var(--color-accent)]"}
-                    capitalize font-medium hover:text-[var(--color-accent)] transition-all`}
+                    className={`${e.path === pathName && "text-[var(--color-accent)] border-b-2 border-[var(--color-accent)]"} capitalize font-medium hover:text-[var(--color-accent)] transition-all`}
                 >
                     {e.name}
                 </Link>

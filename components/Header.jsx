@@ -4,7 +4,7 @@ import DesktopNav from "./Nav";
 
 function Header() {
     return (
-        <header className="py-8 @xl:py-12 bg-pink-50/20">
+        <header className="py-8 @xl:py-12">
             <div className="px-4 @container mx-auto center flex justify-between items-center">
                 {/* Logo */}
                 <Link href="/">
