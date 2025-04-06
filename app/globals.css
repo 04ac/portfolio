@@ -22,10 +22,23 @@ body {
   color: var(--color-text);
 }
 
-@theme {
-  /* --breakpoint-*: initial; */
+.h1 {
+  @apply text-[42px] @xl:text-[60px] leading-[1.1] font-semibold;
+}
+
+.h2 {
+  @apply text-[32px] @xl:text-[40px] leading-[1.1] font-semibold;
+}
+
+.h3 {
+  @apply text-[18px] @xl:text-[24px] leading-[1.1] font-semibold;
+}
+
+
+/* @theme {
+  /* --breakpoint-*: initial;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 968px;
   --breakpoint-xl: 1280px;
-}
+} */

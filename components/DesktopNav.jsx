@@ -9,10 +9,6 @@ const links = [
         path: '/'
     },
     {
-        name: 'services',
-        path: '/services'
-    },
-    {
         name: 'resume',
         path: '/resume'
     },
@@ -24,10 +20,10 @@ const links = [
         name: 'contact',
         path: '/contact'
     },
-    {
-        name: 'control Panel',
-        path: '/control-panel'
-    }
+    // {
+    //     name: 'control panel',
+    //     path: '/control-panel'
+    // }
 ];
 
 const DesktopNav = () => {

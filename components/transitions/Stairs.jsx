@@ -1,6 +1,5 @@
 "use client";
 
-import React from 'react'
 import { motion } from 'framer-motion';
 
 const stairAnim = {
@@ -29,7 +28,7 @@ const Stairs = () => {
                     transition={{
                         duration: 0.4,
                         ease: "easeInOut",
-                        delay: (index) * 0.1
+                        delay: index * 0.1
                     }}
                     className='h-[16.666%] w-full bg-[var(--color-accent)] relative'
                 />
