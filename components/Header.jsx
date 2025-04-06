@@ -10,7 +10,7 @@ function Header() {
                 {/* Logo */}
                 <Link href="/">
                     <h1 className="text-4xl font-semibold">
-                        Areen<span className="text-[var(--color-accent)]">.</span>
+                        <span className="text-[var(--color-accent)] text-5xl">A</span>reen
                     </h1>
                 </Link>
 
