@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { useTheme } from '../../contexts/ThemeContext.jsx';
 import { Button } from '@/components/ui/button.jsx';
+import { sampleThemes } from '@/lib/theme-utils.js';
 
 export default function Home() {
   const [vibe, setVibe] = useState("");
@@ -28,32 +29,29 @@ export default function Home() {
             setVibe(e.target.value)
           }}
         />
-        <button 
+        <button
           onClick={() => getNewTheme(vibe)}
           className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]"
         >
           {!loading ? "Change Theme" : "Loading"}
         </button>
-        <h4>Sample Styles</h4>
-        <div className='flex flex-row'>
-          <Button
-            className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]"
-            onClick={() => {
-              const theme = {
-                "--color-primary": "#1c1c22",
-                "--color-accent": "#00ff99",
-                "--color-accent-hover": "#00e187",
-                "--color-text": "#FFFFFF",
-                "--color-onAccent": "#000000",
-              };
-              
-              setCurrentTheme(theme);
-              setVibe("Verde Areen");
-              setCurrentThemeText("Verde Areen");
-            }}
-          >
-            Verde Areen
-          </Button>
+        <h4 className='mt-2 mb-2'>Sample Styles</h4>
+        <div className='flex flex-wrap gap-8'>
+          {
+            sampleThemes.map((item, index) => {
+              return <Button
+                key={index}
+                className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]"
+                onClick={() => {
+                  setCurrentTheme(item.theme);
+                  setVibe(item.name);
+                  setCurrentThemeText(item.name);
+                }}
+              >
+                {item.name}
+              </Button>
+            })
+          }
         </div>
       </div>
     </main>

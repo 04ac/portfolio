@@ -1,20 +1,15 @@
 "use client";
 import { createContext, useContext, useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
+import { sampleThemes } from '@/lib/theme-utils';
 
 const ThemeContext = createContext();
 
-const DEFAULT_THEME = {
-  "--color-primary": "#1c1c22",
-  "--color-accent": "#00ff99",
-  "--color-accent-hover": "#00e187",
-  "--color-text": "#FFFFFF",
-  "--color-onAccent": "#000000",
-};
+const defaultTheme = sampleThemes[1].theme;
 
 export function ThemeProvider({ children }) {
-  const [currentThemeText, setCurrentThemeText] = useState("Verde Areen");
-  const [currentTheme, setCurrentTheme] = useState(DEFAULT_THEME);
+  const [currentThemeText, setCurrentThemeText] = useState(sampleThemes[1].name);
+  const [currentTheme, setCurrentTheme] = useState(defaultTheme);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
