@@ -21,7 +21,7 @@ export default function ControlPanel() {
         <div className="text-center font-bold text-3xl text-[var(--color-accent)]">
           Control Panel
         </div>
-        <p className='text-center'>Customise my portfolio the way you like it! Try creating your own theme by typing out a vibe in the textbox.</p>
+        <p className='text-center'>Customise my portfolio the way you like it! Try creating your own color scheme by typing out a vibe in the textbox.</p>
         <Divider />
         <div className="@container h-full w-full">
           <div className='flex flex-col @xl:flex-row gap-4'>
@@ -31,7 +31,7 @@ export default function ControlPanel() {
             </div>
             <div className='mt-4 @xl:mt-0 flex flex-col gap-4 @xl:order-1 w-full text-center'>
               <p className="">
-                Current Theme: <span className="font-bold capitalize">{currentThemeText}</span>
+                Current Vibe: <span className="font-bold capitalize">{currentThemeText}</span>
               </p>
               <Input
                 type="text"
@@ -43,7 +43,9 @@ export default function ControlPanel() {
               />
               <Button
                 onClick={() => getNewTheme(vibe)}
-                className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]"
+                className="bg-[var(--color-accent)] hover:bg-[var(--color-primary)] hover:text-[var(--color-accent)]
+                px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]
+                shadow-md border-2 border-[var(--color-accent)]"
               >
                 {!loading ? "Change Theme" : "Loading"}
               </Button>
@@ -57,7 +59,9 @@ export default function ControlPanel() {
             sampleThemes.map((item, index) => {
               return <Button
                 key={index}
-                className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]"
+                className="bg-[var(--color-accent)] hover:bg-[var(--color-primary)] hover:text-[var(--color-accent)]
+                px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]
+                border-2 border-[var(--color-accent)]"
                 onClick={() => {
                   setCurrentTheme(item.theme);
                   // setVibe(item.name);

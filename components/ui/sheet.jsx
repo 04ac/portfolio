@@ -2,9 +2,24 @@
 
 import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
-import {IoMdClose} from "react-icons/io"
+import { IoMdClose } from "react-icons/io"
 
 import { cn } from "@/lib/utils"
+
+// Add a VisuallyHidden component for accessibility
+const VisuallyHidden = React.forwardRef(({ children, ...props }, forwardedRef) => {
+  return (
+    <span
+      ref={forwardedRef}
+      className="absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0"
+      style={{ clip: "rect(0 0 0 0)" }}
+      {...props}
+    >
+      {children}
+    </span>
+  );
+});
+VisuallyHidden.displayName = "VisuallyHidden";
 
 function Sheet({
   ...props
@@ -41,7 +56,7 @@ function SheetOverlay({
         "fixed inset-0 z-50 bg-black/75", // Increased opacity, removed blur
         "transition-all duration-400 ease-in-out",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
-        "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", 
+        "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
         className
       )}
       {...props} />
@@ -52,6 +67,7 @@ function SheetContent({
   className,
   children,
   side = "right",
+  title = "Navigation Sheet",
   ...props
 }) {
   return (
@@ -63,12 +79,12 @@ function SheetContent({
           "fixed z-50 flex flex-col gap-4 shadow-lg",
           "bg-[var(--color-primary)] text-[var(--color-text)]",
           "transform transition-all duration-300 ease-in-out",
-          
+
           side === "right" && [
             "inset-y-0 right-0 h-full w-3/4 sm:max-w-sm",
             "-translate-x-full opacity-0",
             "data-[state=open]:translate-x-0 data-[state=open]:opacity-100",
-            "shadow-[-10px_0px_15px_-3px_rgba(0,0,0,0.1)]" 
+            "shadow-[-10px_0px_15px_-3px_rgba(0,0,0,0.1)]"
           ],
           side === "left" && [
             "inset-y-0 left-0 h-full w-3/4 sm:max-w-sm",
@@ -90,7 +106,14 @@ function SheetContent({
           ],
           className
         )}
-        {...props}>
+        {...props}
+      >
+        {/* Add a default title for screen readers if none is provided in children */}
+        {title && (
+          <VisuallyHidden>
+            <SheetPrimitive.Title>{title}</SheetPrimitive.Title>
+          </VisuallyHidden>
+        )}
         {children}
         <SheetPrimitive.Close
           className="absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] disabled:pointer-events-none text-[var(--color-text)]">

@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 import Socials from "@/components/Socials";
 import Photo from "@/components/Photo";
+import { FaPalette } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,21 +11,39 @@ export default function Home() {
       <div className="@container mx-auto h-full">
         <div className="flex flex-col @xl:flex-row items-center justify-around @xl:pt-8 @xl:pb-24">
           <div className="text-center @xl:text-left order-2 @xl:order-none">
-            {/* <span className="text-xl">Software Developer</span> */}
             <h1 className="h1 mb-6">
               Hello I'm <br />
               <span className="text-[var(--color-accent)]">
                 Areen Chakraborty
               </span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-[var(--color-text)]/80">
-              Software developer with a passion for blending 
+            <p className="max-w-[500px] text-[var(--color-text)]/80">
+              Software developer with a passion for blending
               creative problem-solving with technical expertise to deliver solutions that matter.
             </p>
+            {/* control panel btn */}
+            <Link href="/control-panel">
+              <Button
+                className="bg-[var(--color-accent)] hover:bg-transparent 
+              border-2 border-[var(--color-accent)] text-[var(--color-primary)] 
+              hover:text-[var(--color-accent)] transition-all duration-300 my-6
+              font-bold"
+              >
+                <span className="flex flex-row gap-2 justify-center items-center">
+                  <span>Customize Website</span>
+                  <span><FaPalette /></span>
+                </span>
+              </Button>
+            </Link>
             {/* btn and socials */}
             <div className="flex flex-col @xl:flex-row items-center gap-2">
-              <Button className="bg-transparent border-[var(--color-accent)] border-[1.5] rounded-[20px] mb-6 @xl:mr-6 @xl:mb-0">
-                <span>Download CV</span>
+              <Button
+                className="bg-transparent border-[var(--color-text)] 
+                border-2 mb-6 @xl:mr-6 @xl:mb-0
+                hover:bg-[var(--color-text)] hover:text-[var(--color-primary)] 
+                transition-all duration-300"
+              >
+                <span>View CV</span>
                 <FiDownload className="text-xl" />
               </Button>
               <div className="mb-8 @xl:mb-0">
@@ -40,6 +60,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }
