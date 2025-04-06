@@ -17,8 +17,8 @@ export default function Home() {
               </span>
             </h1>
             <p className="max-w-[500px] mb-9 text-[var(--color-text)]/80">
-              I excel at crafting elegant digital experiences and I am
-              proficient in various programming languages and technologies.
+              Software developer with a passion for blending 
+              creative problem-solving with technical expertise to deliver solutions that matter.
             </p>
             {/* btn and socials */}
             <div className="flex flex-col @xl:flex-row items-center gap-2">

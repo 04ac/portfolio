@@ -22,7 +22,7 @@ const Photo = () => {
         }}
       >
         {/* Container with preserved aspect ratio - smaller dimensions */}
-        <div className="relative w-[240px] aspect-[821/973] @xl:w-[400px] mx-auto">
+        <div className="relative w-[200px] aspect-[821/973] @xl:w-[400px] mx-auto">
           <Image
             src="/assets/Areen_image2_bg_removed.png"
             priority

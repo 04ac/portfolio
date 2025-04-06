@@ -5,11 +5,11 @@ import { sampleThemes } from '@/lib/theme-utils';
 
 const ThemeContext = createContext();
 
-const defaultTheme = sampleThemes[1].theme;
+const defaultTheme = sampleThemes[1];
 
 export function ThemeProvider({ children }) {
-  const [currentThemeText, setCurrentThemeText] = useState(sampleThemes[1].name);
-  const [currentTheme, setCurrentTheme] = useState(defaultTheme);
+  const [currentThemeText, setCurrentThemeText] = useState(defaultTheme.name);
+  const [currentTheme, setCurrentTheme] = useState(defaultTheme.theme);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -32,11 +32,11 @@ export function ThemeProvider({ children }) {
   const updateTheme = (theme, text) => {
     setCurrentTheme(theme);
     if (text) setCurrentThemeText(text);
-    
+
     // Update cookies (30 day expiration)
     Cookies.set('portfolio-theme', JSON.stringify(theme), { expires: 30 });
     if (text) Cookies.set('portfolio-theme-text', text, { expires: 30 });
-    
+
     // For immediate effect on the client side
     Object.entries(theme).forEach(([key, value]) => {
       document.documentElement.style.setProperty(key, value);
@@ -60,11 +60,11 @@ export function ThemeProvider({ children }) {
       }
 
       const themeObject = await res.json();
-      
+
       if (themeObject.error) {
         throw new Error(themeObject.error);
       }
-      
+
       updateTheme(themeObject, vibe);
     } catch (error) {
       console.error("Error fetching new theme:", error);

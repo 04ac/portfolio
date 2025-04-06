@@ -5,38 +5,54 @@ import { useTheme } from '../../contexts/ThemeContext.jsx';
 import { Button } from '@/components/ui/button.jsx';
 import { sampleThemes } from '@/lib/theme-utils.js';
 
-export default function Home() {
+const Divider = () => {
+  return (
+    <div className='w-full max-w-3xl mx-auto my-2 h-[0.5] bg-[var(--color-accent)]/60'></div>
+  )
+}
+
+export default function ControlPanel() {
   const [vibe, setVibe] = useState("");
   const { currentThemeText, loading, getNewTheme, setCurrentTheme, setCurrentThemeText } = useTheme();
 
   return (
-    <main>
-      <div className="text-[var(--color-text)] bg-[var(--color-primary)] min-h-screen flex flex-col gap-4 p-4">
-        <div className="text-center font-bold underline text-3xl text-[var(--color-accent)]">
-          Homepage
+    <main className='h-full w-full mx-auto max-w-3xl'>
+      <div className="text-[var(--color-text)] bg-[var(--color-primary)] min-h-screen flex flex-col gap-4 p-4 items-center">
+        <div className="text-center font-bold text-3xl text-[var(--color-accent)]">
+          Control Panel
         </div>
-        <div className="bg-[var(--color-accent)] p-4 text-[var(--color-onAccent)]">
-          Primary Background
+        <p className='text-center'>Customise my portfolio the way you like it! Try creating your own theme by typing out a vibe in the textbox.</p>
+        <Divider />
+        <div className="@container h-full w-full">
+          <div className='flex flex-col @xl:flex-row gap-4'>
+            <div className="bg-[var(--color-accent)] text-2xl flex items-center justify-center 
+            p-4 text-[var(--color-onAccent)] @xl:order-2 w-full rounded-xl @xl:rounded-2xl">
+              Accent Color
+            </div>
+            <div className='mt-4 @xl:mt-0 flex flex-col gap-4 @xl:order-1 w-full text-center'>
+              <p className="">
+                Current Theme: <span className="font-bold capitalize">{currentThemeText}</span>
+              </p>
+              <Input
+                type="text"
+                placeholder="Enter a vibe..."
+                value={vibe}
+                onChange={(e) => {
+                  setVibe(e.target.value)
+                }}
+              />
+              <Button
+                onClick={() => getNewTheme(vibe)}
+                className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]"
+              >
+                {!loading ? "Change Theme" : "Loading"}
+              </Button>
+            </div>
+          </div>
         </div>
-        <p className="mt-4">
-          Current Theme: <span className="font-bold capitalize">{currentThemeText}</span>
-        </p>
-        <Input
-          type="text"
-          placeholder="Enter a vibe..."
-          value={vibe}
-          onChange={(e) => {
-            setVibe(e.target.value)
-          }}
-        />
-        <button
-          onClick={() => getNewTheme(vibe)}
-          className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]"
-        >
-          {!loading ? "Change Theme" : "Loading"}
-        </button>
-        <h4 className='mt-2 mb-2'>Sample Styles</h4>
-        <div className='flex flex-wrap gap-8'>
+        <Divider />
+        <h4 className="mb-2">Sample Styles</h4>
+        <div className="flex flex-wrap gap-8 items-center justify-center">
           {
             sampleThemes.map((item, index) => {
               return <Button
@@ -44,7 +60,7 @@ export default function Home() {
                 className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]"
                 onClick={() => {
                   setCurrentTheme(item.theme);
-                  setVibe(item.name);
+                  // setVibe(item.name);
                   setCurrentThemeText(item.name);
                 }}
               >
