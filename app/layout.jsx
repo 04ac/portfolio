@@ -14,7 +14,7 @@ import StairTransition from "@/components/transitions/StairTransition";
 // });
 
 export const metadata = {
-  title: "Areen Chakraborty | Software Developer",
+  title: "Areen Chakraborty | Portfolio",
   description: "Portfolio of Areen Chakraborty - Software developer specializing in mobile and web applications with experience in Flutter, Android, Java, Python, C++ and front-end technologies.",
   // keywords: ["software developer", "portfolio", "full-stack developer", "Flutter", "Android", "Java", "C++", "Python", "React", "Next.js", "Django"],
   // creator: "Areen Chakraborty",
