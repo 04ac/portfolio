@@ -9,13 +9,13 @@
   background-color: inherit;
 }
 
-:root {
+/* :root {
   --color-primary: #1A2942;
   --color-accent: #5682A3;
   --color-accent-hover: #406E8E;
   --color-text: #D9E2EC;
   --color-onAccent: #FFFFFF;
-}
+} */
 
 body {
   background-color: var(--color-primary);
