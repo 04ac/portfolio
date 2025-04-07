@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import PageTransition from "@/components/transitions/PageTransition";
 import ThemeStyleInjector from "@/components/ThemeStyleInjector";
 import StairTransition from "@/components/transitions/StairTransition";
+import FontLoader from "@/components/FontLoader";
 // import { JetBrains_Mono } from "next/font/google";
 
 // const jetbrainsMono = JetBrains_Mono({
@@ -54,13 +55,14 @@ const robotoMono = Roboto_Mono({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={robotoMono.variable}>
       <head>
         <ThemeStyleInjector />
       </head>
-      <body className={robotoMono.className}>
+      <body className="">
         <ThemeProvider>
           <>
+            <FontLoader />
             <Header />
             <StairTransition />
             <PageTransition>{children}</PageTransition>

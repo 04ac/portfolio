@@ -27,7 +27,14 @@ export async function POST(req) {
           {
             parts: [
               {
-                text: `Generate a color scheme based on the theme described as: ${vibe}. Return the result as a JSON object with the following keys: '--color-primary', '--color-accent', '--color-accent-hover', '--color-onAccent', and '--color-text'. Ensure the values are valid hex color codes. The background color will be --color-primary, and '--color-onAccent' is a color that looks good on the accent color. Important: Return ONLY the JSON object, no markdown formatting or other text.`,
+                text: `Generate a complete theme based on: "${vibe}".
+                Return a JSON object with:
+                1. Color scheme with keys: '--color-primary', '--color-accent', '--color-accent-hover', '--color-onAccent', and '--color-text' (valid hex codes)
+                2. Font selection with keys: '--font-heading' and '--font-body' (select from Google Fonts and use Monospace fonts only for the body font)
+                
+                For fonts, choose options that match the theme's mood. Background is '--color-primary', and text is '--color-text'.
+                '--color-onAccent' should contrast well with '--color-accent' for readability.
+                Return ONLY a valid JSON object without any explanation or markdown. Keep both font data and color data in the same json object, no nesting of objects`,
               },
             ],
           },

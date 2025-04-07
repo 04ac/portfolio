@@ -2,6 +2,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import { sampleThemes } from '@/lib/theme-utils';
+import loadFont from '@/lib/font-utils';
 
 const ThemeContext = createContext();
 
@@ -37,10 +38,33 @@ export function ThemeProvider({ children }) {
     Cookies.set('portfolio-theme', JSON.stringify(theme), { expires: 30 });
     if (text) Cookies.set('portfolio-theme-text', text, { expires: 30 });
 
-    // For immediate effect on the client side
-    Object.entries(theme).forEach(([key, value]) => {
-      document.documentElement.style.setProperty(key, value);
-    });
+    // Load both heading and body fonts if they exist
+    if (theme['--font-heading']) {
+      loadFont(theme['--font-heading']);
+    }
+    if (theme['--font-body']) {
+      loadFont(theme['--font-body']);
+    }
+
+    const cssVariables = Object.entries(theme)
+      .map(([key, value]) => `${key}: ${value};`)
+      .join('\n  ');
+
+    document.getElementById('st').innerHTML = `
+      :root {
+        ${cssVariables}
+      }
+      
+      body {
+        font-family: ${theme['--font-body'] || 'var(--font-robotoMono)'};
+        background-color: var(--color-primary);
+        color: var(--color-text);
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: ${theme['--font-heading'] || 'var(--font-robotoMono)'};
+      }
+    `;
   };
 
   async function getNewTheme(vibe) {
