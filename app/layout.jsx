@@ -16,34 +16,34 @@ import StairTransition from "@/components/transitions/StairTransition";
 export const metadata = {
   title: "Areen Chakraborty | Software Developer",
   description: "Portfolio of Areen Chakraborty - Software developer specializing in mobile and web applications with experience in Flutter, Android, Java, Python, C++ and front-end technologies.",
-  keywords: ["software developer", "portfolio", "full-stack developer", "Flutter", "Android", "Java", "C++", "Python", "React", "Next.js", "Django"],
-  creator: "Areen Chakraborty",
-  authors: [{ name: "Areen Chakraborty" }],
-  formatDetection: {
-    email: false,
-    telephone: false,
-  },
-  openGraph: {
-    title: "Areen Chakraborty | Software Developer Portfolio",
-    description: "Software developer with a passion for blending creative problem-solving with technical expertise to deliver solutions that matter.",
-    url: "https://areen.vercel.app/",
-    siteName: "Areen Chakraborty Portfolio",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Areen Chakraborty | Software Developer",
-    description: "Check out my portfolio to see my projects and experience in software development.",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  // keywords: ["software developer", "portfolio", "full-stack developer", "Flutter", "Android", "Java", "C++", "Python", "React", "Next.js", "Django"],
+  // creator: "Areen Chakraborty",
+  // authors: [{ name: "Areen Chakraborty" }],
+  // formatDetection: {
+  //   email: false,
+  //   telephone: false,
+  // },
+  // openGraph: {
+  //   title: "Areen Chakraborty | Software Developer Portfolio",
+  //   description: "Software developer with a passion for blending creative problem-solving with technical expertise to deliver solutions that matter.",
+  //   url: "https://areen.vercel.app/",
+  //   siteName: "Areen Chakraborty Portfolio",
+  //   locale: "en_US",
+  //   type: "website",
+  // },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "Areen Chakraborty | Software Developer",
+  //   description: "Check out my portfolio to see my projects and experience in software development.",
+  // },
+  // viewport: {
+  //   width: "device-width",
+  //   initialScale: 1,
+  // },
+  // robots: {
+  //   index: true,
+  //   follow: true,
+  // },
 };
 
 const robotoMono = Roboto_Mono({
