@@ -15,27 +15,27 @@ const stairAnim = {
 };
 
 const Stairs = () => {
-  return (
-    <div className='h-full w-full flex flex-col'>
-        {
-            [...Array(6)].map((_, index) => {
-                return <motion.div 
-                    key={index}
-                    variants={stairAnim}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    transition={{
-                        duration: 0.4,
-                        ease: "easeInOut",
-                        delay: index * 0.1
-                    }}
-                    className='h-[16.666%] w-full bg-[var(--color-accent)] relative'
-                />
-            })
-        }
-    </div>
-  )
+    return (
+        <div className='h-full w-full flex flex-col'>
+            {
+                [...Array(6)].map((_, index) => {
+                    return <motion.div
+                        key={index}
+                        variants={stairAnim}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        transition={{
+                            duration: 0.4,
+                            ease: "easeInOut",
+                            delay: index * 0.1
+                        }}
+                        className='h-[16.667%] w-full bg-[var(--color-accent)] relative overflow-hidden'
+                    />
+                })
+            }
+        </div>
+    )
 }
 
 export default Stairs
