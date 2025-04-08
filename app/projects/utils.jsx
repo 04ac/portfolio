@@ -1,7 +1,7 @@
 const projects = [
   {
     title: "MTTN Mobile App",
-    description: "The official mobile app for Manipal The Talk Network with news, event info, and campus resources.",
+    description: "The official mobile app for Manipal The Talk Network with articles, videos, artwork and event info.",
     tech: ["Flutter", "Express.js", "AWS", "Cloudflare", "Google Play Console"],
     image: "/assets/mttn-banner.jpg",
     liveLink: "https://play.google.com/store/apps/details?id=com.mttn.android"
@@ -20,7 +20,8 @@ const projects = [
     tech: ["Flutter", "FastAPI", "Huggingface API", "Kotlin"],
     image: "/assets/yt-summarizer.png",
     githubLink: "https://github.com/04ac/video-summarizer-yt",
-    date: "January 2024"
+    date: "January 2024",
+    contain: true,
   },
   {
     title: "Aircraft Search",
@@ -34,7 +35,7 @@ const projects = [
     title: "Konkan Rail Train Status",
     description: "Flutter app which shows live data on running trains from the Konkan Railway API.",
     tech: ["Flutter", "REST API", "Dart"],
-    image: "/assets/konkan-rail.png",
+    image: "/assets/image.png",
     githubLink: "https://github.com/04ac/konkan-rail-train-status",
     date: "October 2023"
   },

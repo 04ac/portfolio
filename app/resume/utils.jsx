@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+import { complex, motion } from "framer-motion";
+import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaDocker, FaGit, FaJava } from "react-icons/fa";
+import { SiFlutter, SiDart, SiKotlin, SiNextdotjs, SiFirebase, SiAmazonwebservices, SiJavascript, SiPostgresql, SiMongodb, SiExpress, SiFastapi, SiCplusplus, SiDjango, SiTailwindcss } from "react-icons/si";
 
 const ResumeCard = ({ children }) => {
   return (
@@ -17,6 +19,16 @@ const ResumeCard = ({ children }) => {
 
 const ResumeGrid = ({ children }) => {
   return (<div className="w-full p-4 grid gap-6 lg:grid-cols-2">{children}</div>);
+}
+
+
+const SkillIcon = ({ icon, label }) => {
+  return (
+    <div className="flex flex-col items-center justify-center text-[var(--color-accent)] hover:text-[var(--color-text)] transition-all duration-300 cursor-pointer group">
+      <div className="text-5xl mb-2 group-hover:scale-110 transition-transform">{icon}</div>
+      <span className="text-sm text-center font-semibold">{label}</span>
+    </div>
+  );
 }
 
 const subPages = [
@@ -143,6 +155,38 @@ const subPages = [
         </ResumeGrid>
       </div>
   },
+  {
+    name: "Skills",
+    component: (
+      <section className="pt-2">
+        <div className="@container mx-auto">
+          <h1 className="text-3xl font-bold text-center mb-12">
+            Tech I've worked with
+          </h1>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 place-items-center">
+          <SkillIcon icon={<SiFlutter />} label="Flutter" />
+          <SkillIcon icon={<SiDart />} label="Dart" />
+
+          <SkillIcon icon={<FaPython />} label="Python" />
+          <SkillIcon icon={<FaJava />} label="Java" />
+          <SkillIcon icon={<SiCplusplus />} label="C++" />
+          <SkillIcon icon={<SiKotlin />} label="Kotlin" />
+          <SkillIcon icon={<SiTailwindcss />} label="Tailwind CSS" />
+          <SkillIcon icon={<SiJavascript />} label="JavaScript" />
+          <SkillIcon icon={<FaReact />} label="React.js" />
+          <SkillIcon icon={<SiNextdotjs />} label="Next.js" />
+
+          <SkillIcon icon={<SiExpress />} label="Express.js" />
+          <SkillIcon icon={<SiFastapi />} label="FastAPI" />
+          <SkillIcon icon={<SiDjango />} label="Django" />
+
+          <SkillIcon icon={<SiFirebase />} label="Firebase" />
+          <SkillIcon icon={<SiAmazonwebservices />} label="AWS EC2" />
+          </div>
+        </div>
+      </section>
+    )
+  }
 ];
 
 export { ResumeCard, ResumeGrid, subPages };

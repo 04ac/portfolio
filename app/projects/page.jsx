@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { projects } from './utils';
 import Image from 'next/image';
 
-const ProjectCard = ({ title, description, tech, image, githubLink, liveLink }) => {
+const ProjectCard = ({ title, description, tech, image, githubLink, liveLink, contain = false }) => {
   return (
     <motion.div className='border border-[var(--color-accent)] rounded-lg shadow-md
      hover:shadow-[0_4px_15px_var(--color-accent)] transition-all duration-300 w-full @xl:max-w-4xl mx-auto p-4 bg-[var(--color-primary)]'
@@ -17,7 +17,7 @@ const ProjectCard = ({ title, description, tech, image, githubLink, liveLink }) 
           alt={title}
           width={500}
           height={200}
-          className="object-cover object-[50%_15%] w-full h-full mx-auto hover:scale-105 transition-all duration-500"
+          className={`${contain ? "object-contain" : "object-cover"} object-[50%_15%] w-full h-full mx-auto hover:scale-105 transition-all duration-500`}
         />
       </div>
       <h3 className="text-xl font-bold my-4 text-[var(--color-accent)] mx-1">{title}</h3>
@@ -45,7 +45,7 @@ const ProjectCard = ({ title, description, tech, image, githubLink, liveLink }) 
           </a>
         )}
       </div>
-    </motion.div >
+    </motion.div>
   );
 };
 
@@ -64,6 +64,7 @@ const Projects = () => {
             image={item.image}
             githubLink={item.githubLink}
             liveLink={item.liveLink}
+            contain={item.contain}
           />
         })
       }
