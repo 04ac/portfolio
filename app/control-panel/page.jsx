@@ -1,9 +1,10 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { useTheme } from '../../contexts/ThemeContext.jsx';
 import { Button } from '@/components/ui/button.jsx';
 import { sampleThemes } from '@/lib/theme-utils.js';
+import { LoaderCircle } from 'lucide-react';
 
 const Divider = () => {
   return (
@@ -14,6 +15,32 @@ const Divider = () => {
 export default function ControlPanel() {
   const [vibe, setVibe] = useState("");
   const { currentThemeText, loading, getNewTheme, setCurrentTheme, setCurrentThemeText } = useTheme();
+  const [isRateLimited, setIsRateLimited] = useState(false);
+  const [countdown, setCountdown] = useState(0);
+
+  // For rate limiting
+  useEffect(() => {
+    let timer;
+    if (isRateLimited && countdown > 0) {
+      timer = setTimeout(() => {
+        setCountdown(countdown - 1);
+      }, 1000);
+    } else if (countdown === 0) {
+      setIsRateLimited(false);
+    }
+    
+    return () => clearTimeout(timer);
+  }, [isRateLimited, countdown]);
+
+
+  const handleThemeGeneration = () => {
+    if (loading || isRateLimited || !vibe.trim()) return;
+    
+    getNewTheme(vibe);
+    
+    setIsRateLimited(true);
+    setCountdown(12);
+  };
 
   return (
     <main className='h-full w-full mx-auto max-w-3xl'>
@@ -42,13 +69,28 @@ export default function ControlPanel() {
                 }}
               />
               <Button
-                onClick={() => getNewTheme(vibe)}
+                onClick={handleThemeGeneration}
+                disabled={loading || isRateLimited || !vibe.trim()}
                 className="bg-[var(--color-accent)] hover:bg-[var(--color-primary)] hover:text-[var(--color-accent)]
                 px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]
-                shadow-md border-2 border-[var(--color-accent)]"
+                shadow-md border-2 border-[var(--color-accent)] disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {!loading ? "Change Theme" : "Loading"}
+                {loading ? (
+                  <>
+                    <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
+                    Generating...
+                  </>
+                ) : isRateLimited ? (
+                  `Try again in ${countdown}s`
+                ) : (
+                  "Change Theme"
+                )}
               </Button>
+              {!vibe.trim() ? (
+                <p className="text-sm text-[var(--color-accent)]">
+                  Please enter a vibe.
+                </p>
+              ) : null}
             </div>
           </div>
         </div>
