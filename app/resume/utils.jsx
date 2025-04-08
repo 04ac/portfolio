@@ -171,7 +171,7 @@ const subPages = [
   {
     name: "Skills",
     component: (
-      <section className="pt-2">
+      <section className="pt-2 pb-4">
         <div className="@container mx-auto">
           <h1 className="text-3xl font-bold text-center mb-12">
             Tech I've worked with

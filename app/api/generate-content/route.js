@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
-  const { vibe } = await req.json();
+  let { vibe } = await req.json();
+
+  vibe = vibe.slice(0, 300);
+  console.log(vibe);
 
   const apiKey = process.env.GOOGLE_API_KEY;
 

@@ -12,7 +12,7 @@ const Resume = () => {
       {/* Top level div to separate the buttons from the content */}
       <div className="flex flex-col h-full @xl:flex-row @xl:justify-between gap-6 @xl:pl-8">
         {/* div1: for buttons */}
-        <div className="flex flex-wrap justify-center @xl:flex-col gap-4 shrink-0  @xl:px-0 px-4">
+        <div className="flex flex-wrap justify-center @xl:flex-col gap-4 shrink-0 @xl:px-0 px-4">
           {
             subPages.map((item, index) => {
               return <Button

@@ -70,13 +70,15 @@ export function ThemeProvider({ children }) {
   async function getNewTheme(vibe) {
     setLoading(true);
 
+    const trimmedVibe = vibe.slice(0, 300);
+
     try {
       const res = await fetch("/api/generate-content", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ vibe })
+        body: JSON.stringify({ vibe: trimmedVibe })
       });
 
       if (!res.ok) {
