@@ -1,5 +1,5 @@
 import { complex, motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaDocker, FaGit, FaJava } from "react-icons/fa";
+import { FaReact, FaPython, FaJava } from "react-icons/fa";
 import { SiFlutter, SiDart, SiKotlin, SiNextdotjs, SiFirebase, SiAmazonwebservices, SiJavascript, SiPostgresql, SiMongodb, SiExpress, SiFastapi, SiCplusplus, SiDjango, SiTailwindcss } from "react-icons/si";
 
 const ResumeCard = ({ children }) => {

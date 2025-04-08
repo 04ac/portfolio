@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 import Socials from "@/components/Socials";
 import Photo from "@/components/Photo";
-import { FaPalette, FaCode } from "react-icons/fa";
+import { FaPalette, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Home() {
@@ -37,16 +37,20 @@ export default function Home() {
             </Link>
             {/* btn and socials */}
             <div className="flex flex-col @xl:flex-row items-center gap-2">
-              <Link href="/resume">
+            <Link 
+              href="mailto:areen.c4@gmail.com"
+              // target="_blank"
+              rel="noopener noreferrer"
+            >
                 <Button
                   className="bg-transparent border-[var(--color-text)] 
-                border-2 mb-6 @xl:mr-6 @xl:mb-0
-                hover:bg-[var(--color-text)] hover:text-[var(--color-primary)] 
-                transition-all duration-300 text-center"
+                  border-2 mb-6 @xl:mr-6 @xl:mb-0
+                  hover:bg-[var(--color-text)] hover:text-[var(--color-primary)] 
+                  transition-all duration-300 text-center"
                 >
                   <span className="flex items-center justify-center gap-2">
-                    <span>View my Experience</span>
-                    <FaCode className="text-xl" />
+                    <span>Say Hi!</span>
+                    <FaEnvelope className="text-xl" />
                   </span>
                 </Button>
               </Link>
