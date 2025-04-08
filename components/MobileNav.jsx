@@ -5,29 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { CiMenuFries } from "react-icons/ci";
-
-const links = [
-  {
-    name: 'home',
-    path: '/'
-  },
-  {
-    name: 'resume',
-    path: '/resume'
-  },
-  {
-    name: 'work',
-    path: '/work'
-  },
-  {
-    name: 'contact',
-    path: '/contact'
-  },
-  // {
-  //     name: 'control Panel',
-  //     path: '/control-panel'
-  // }
-];
+import links from "@/lib/nav-utils";
 
 const MobileNav = () => {
   const pathName = usePathname();

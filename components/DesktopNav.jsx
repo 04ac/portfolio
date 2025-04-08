@@ -2,38 +2,15 @@
 import React from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-
-const links = [
-    {
-        name: 'home',
-        path: '/'
-    },
-    {
-        name: 'resume',
-        path: '/resume'
-    },
-    {
-        name: 'work',
-        path: '/work'
-    },
-    {
-        name: 'contact',
-        path: '/contact'
-    },
-    // {
-    //     name: 'control panel',
-    //     path: '/control-panel'
-    // }
-];
+import links from '@/lib/nav-utils';
 
 const DesktopNav = () => {
     const pathName = usePathname();
-    console.log(pathName);
 
     return (
         <nav className='flex gap-8'>
             {links.map((e, idx) => {
-                return <Link 
+                return <Link
                     href={e.path}
                     key={idx}
                     className={`${e.path === pathName && "text-[var(--color-accent)] border-b-2 border-[var(--color-accent)]"} capitalize font-medium hover:text-[var(--color-accent)] transition-all`}
