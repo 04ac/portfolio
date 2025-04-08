@@ -8,10 +8,14 @@ import Image from 'next/image';
 
 const ProjectCard = ({ title, description, tech, image, githubLink, liveLink, contain = false }) => {
   return (
-    <motion.div className='border border-[var(--color-accent)] rounded-lg shadow-md
-     hover:shadow-[0_4px_15px_var(--color-accent)] transition-all duration-300 w-full @xl:max-w-4xl mx-auto p-4 bg-[var(--color-primary)]'
-      whileHover={{ y: -10, x: +10 }}>
-      <div className="h-48">
+    <motion.div 
+      className='border border-[var(--color-accent)] rounded-lg shadow-md
+       hover:shadow-[0_4px_15px_var(--color-accent)] active:shadow-[0_4px_15px_var(--color-accent)]
+       transition-all duration-300 w-full @xl:max-w-4xl mx-auto p-4 bg-[var(--color-primary)]'
+      whileHover={{ y: -10, x: 10 }}
+      whileTap={{ y: -5, x: 5 }}
+    >
+      <div className="h-48" >
         <Image
           src={image}
           alt={title}

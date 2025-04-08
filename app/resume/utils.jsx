@@ -7,8 +7,12 @@ const ResumeCard = ({ children }) => {
     <motion.div
       className="border rounded-md p-4 shadow-sm 
         hover:shadow-lg hover:-translate-y-1 hover:translate-x-1
-        transition-all duration-300 ease-out"
+        transition-all duration-300 ease-out
+        active:-translate-y-1 active:translate-x-1"
       whileHover={{
+        boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
+      }}
+      whileTap={{
         boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
       }}
     >
@@ -24,12 +28,21 @@ const ResumeGrid = ({ children }) => {
 
 const SkillIcon = ({ icon, label }) => {
   return (
-    <div className="flex flex-col items-center justify-center text-[var(--color-accent)] hover:text-[var(--color-text)] transition-all duration-300 cursor-pointer group">
-      <div className="text-5xl mb-2 group-hover:scale-110 transition-transform">{icon}</div>
-      <span className="text-sm text-center font-semibold">{label}</span>
+    <div className="flex flex-col items-center justify-center text-[var(--color-accent)] 
+      hover:text-[var(--color-text)] active:text-[var(--color-text)] 
+      transition-all duration-300 cursor-pointer group
+      active:scale-110 tap-highlight-transparent">
+      <div className="text-5xl mb-2 group-hover:scale-110 group-active:scale-125 
+        transition-transform">
+        {icon}
+      </div>
+      <span className="text-sm text-center font-semibold 
+        group-active:font-bold group-active:text-[var(--color-text)]">
+        {label}
+      </span>
     </div>
   );
-}
+};
 
 const subPages = [
   {
@@ -164,24 +177,24 @@ const subPages = [
             Tech I've worked with
           </h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 place-items-center">
-          <SkillIcon icon={<SiFlutter />} label="Flutter" />
-          <SkillIcon icon={<SiDart />} label="Dart" />
+            <SkillIcon icon={<SiFlutter />} label="Flutter" />
+            <SkillIcon icon={<SiDart />} label="Dart" />
 
-          <SkillIcon icon={<FaPython />} label="Python" />
-          <SkillIcon icon={<FaJava />} label="Java" />
-          <SkillIcon icon={<SiCplusplus />} label="C++" />
-          <SkillIcon icon={<SiKotlin />} label="Kotlin" />
-          <SkillIcon icon={<SiTailwindcss />} label="Tailwind CSS" />
-          <SkillIcon icon={<SiJavascript />} label="JavaScript" />
-          <SkillIcon icon={<FaReact />} label="React.js" />
-          <SkillIcon icon={<SiNextdotjs />} label="Next.js" />
+            <SkillIcon icon={<FaPython />} label="Python" />
+            <SkillIcon icon={<FaJava />} label="Java" />
+            <SkillIcon icon={<SiCplusplus />} label="C++" />
+            <SkillIcon icon={<SiKotlin />} label="Kotlin" />
+            <SkillIcon icon={<SiTailwindcss />} label="Tailwind CSS" />
+            <SkillIcon icon={<SiJavascript />} label="JavaScript" />
+            <SkillIcon icon={<FaReact />} label="React.js" />
+            <SkillIcon icon={<SiNextdotjs />} label="Next.js" />
 
-          <SkillIcon icon={<SiExpress />} label="Express.js" />
-          <SkillIcon icon={<SiFastapi />} label="FastAPI" />
-          <SkillIcon icon={<SiDjango />} label="Django" />
+            <SkillIcon icon={<SiExpress />} label="Express.js" />
+            <SkillIcon icon={<SiFastapi />} label="FastAPI" />
+            <SkillIcon icon={<SiDjango />} label="Django" />
 
-          <SkillIcon icon={<SiFirebase />} label="Firebase" />
-          <SkillIcon icon={<SiAmazonwebservices />} label="AWS EC2" />
+            <SkillIcon icon={<SiFirebase />} label="Firebase" />
+            <SkillIcon icon={<SiAmazonwebservices />} label="AWS EC2" />
           </div>
         </div>
       </section>
