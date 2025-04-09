@@ -24,9 +24,9 @@ export default function Home() {
             {/* control panel btn */}
             <Link href="/control-panel">
               <Button
-                className="bg-[var(--color-accent)] hover:bg-transparent 
+                className="bg-[var(--color-accent)] hover:bg-transparent active:bg-transparent 
               border-2 border-[var(--color-accent)] text-[var(--color-primary)] 
-              hover:text-[var(--color-accent)] transition-all duration-300 my-6
+              hover:text-[var(--color-accent)] active:text-[var(--color-accent)] transition-all duration-300 my-6
               font-bold"
               >
                 <span className="flex flex-row gap-2 justify-center items-center">
@@ -46,6 +46,7 @@ export default function Home() {
                   className="bg-transparent border-[var(--color-text)] 
                   border-2 mb-6 @xl:mr-6 @xl:mb-0
                   hover:bg-[var(--color-text)] hover:text-[var(--color-primary)] 
+                  active:bg-[var(--color-text)] active:text-[var(--color-primary)] 
                   transition-all duration-300 text-center"
                 >
                   <span className="flex items-center justify-center gap-2">
@@ -57,7 +58,12 @@ export default function Home() {
               <div className="mb-8 @xl:mb-0">
                 <Socials
                   containerStyles="flex gap-6"
-                  iconStyles="w-9 h-9 border border-[var(--color-accent)] border-[1.5] rounded-full flex justify-center items-center text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-[var(--color-primary)] transition-all duration-300"
+                  iconStyles="w-9 h-9 border border-[var(--color-accent)]
+                  border-[1.5] rounded-full flex justify-center items-center
+                  text-[var(--color-accent)] 
+                  hover:bg-[var(--color-accent)] hover:text-[var(--color-primary)]
+                  active:bg-[var(--color-accent)] active:text-[var(--color-primary)]
+                  transition-all duration-300"
                 />
               </div>
             </div>

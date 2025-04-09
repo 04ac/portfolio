@@ -31,7 +31,8 @@ const MobileNav = () => {
             links.map((item, idx) => {
               return <SheetClose asChild key={item.path}>
                 <Link href={item.path} key={item.path}
-                  className={`${pathName == item.path && "text-[var(--color-accent)] border-b-2 border-[var(--color-accent)]"} text-xl capitalize hover:text-[var(--color-accent)] transition-all`}
+                  className={`${pathName == item.path && "text-[var(--color-accent)] border-b-2 border-[var(--color-accent)]"}
+                  text-xl capitalize hover:text-[var(--color-accent)] active:text-[var(--color-accent)] transition-all`}
                 >
                   {item.name}
                 </Link>
@@ -41,7 +42,10 @@ const MobileNav = () => {
           <SheetClose asChild>
             <Link href="/control-panel">
               <Button
-                className="bg-[var(--color-accent)] hover:bg-transparent border-2 border-[var(--color-accent)] text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-all duration-300 mt-3"
+                className="bg-[var(--color-accent)] hover:bg-transparent active:bg-transparent 
+                border-2 border-[var(--color-accent)] text-[var(--color-primary)]
+                hover:text-[var(--color-accent)] active:text-[var(--color-accent)]
+                transition-all duration-300 mt-3"
               >
                 Control Panel
               </Button>

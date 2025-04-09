@@ -96,14 +96,14 @@ export default function ControlPanel() {
         </div>
         <Divider />
         <h4 className="mb-2">Sample Styles</h4>
-        <div className="flex flex-wrap gap-8 items-center justify-center">
+        <div className="flex flex-wrap gap-4 items-center justify-center">
           {
             sampleThemes.map((item, index) => {
               return <Button
                 key={index}
                 className="bg-[var(--color-accent)] hover:bg-[var(--color-primary)] hover:text-[var(--color-accent)]
                 px-4 py-2 rounded transition-colors duration-200 text-[var(--color-onAccent)]
-                border-2 border-[var(--color-accent)]"
+                border-2 border-[var(--color-accent)] active:bg-[var(--color-primary)] active:text-[var(--color-accent)]"
                 onClick={() => {
                   setCurrentTheme(item.theme);
                   // setVibe(item.name);

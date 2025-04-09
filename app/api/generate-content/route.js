@@ -33,7 +33,7 @@ export async function POST(req) {
                 text: `Generate a complete theme based on: "${vibe}".
                 Return a JSON object with:
                 1. Color scheme with keys: '--color-primary', '--color-accent', '--color-accent-hover', '--color-onAccent', and '--color-text' (valid hex codes)
-                2. Font selection with keys: '--font-heading' and '--font-body' (select from Google Fonts and use Monospace fonts only for the body font)
+                2. Font selection with keys: '--font-heading' and '--font-body' (select from Google Fonts only)
                 
                 For fonts, choose options that match the theme's mood. Background is '--color-primary', and text is '--color-text'.
                 '--color-onAccent' should contrast well with '--color-accent' for readability.

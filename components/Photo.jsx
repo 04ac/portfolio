@@ -5,12 +5,13 @@ import { motion } from "framer-motion"
 
 const Photo = () => {
   // Original aspect ratio constants
-  const originalWidth = 821;
-  const originalHeight = 973;
-  const aspectRatio = originalHeight / originalWidth;
+  const originalWidth = 1878;
+  const originalHeight = 2368;
 
-  const horizontalOffset = 400;
-  const verticalOffset = 400;
+  const horizontalOffset = originalWidth;
+  const verticalOffset = originalHeight;
+  
+  const animationDuration = 10;
 
   return (
     <div className="w-full h-full relative">
@@ -21,18 +22,22 @@ const Photo = () => {
           transition: { delay: 1.5, duration: 0.4, ease: "easeIn" }
         }}
       >
-        {/* Container with preserved aspect ratio - smaller dimensions */}
-        <div className="relative w-[200px] aspect-[821/973] @xl:w-[400px] mx-auto">
-          <Image
-            src="/assets/Areen_image2_bg_removed.png"
-            priority
-            quality={100}
-            fill
-            alt="Areen's Image"
-            className="object-contain"
-          />
+        {/* Container with preserved aspect ratio - original dimensions */}
+        <div
+          className="relative @xl:w-[400px] w-[200px] mx-auto"
+          style={{ aspectRatio: originalWidth / originalHeight }}
+        >
+          <div className="absolute inset-2">
+            <Image
+              src="/assets/me-2.png"
+              priority
+              quality={80}
+              fill
+              alt="Areen's Image"
+              className="object-contain"
+            />
+          </div>
 
-          {/* SVG maintains same aspect ratio */}
           <motion.svg
             className="absolute top-0 left-0 w-full h-full"
             fill="transparent"
@@ -47,12 +52,12 @@ const Photo = () => {
               x2={originalWidth}
               y2="0"
               stroke="var(--color-accent)"
-              strokeWidth="12"
+              strokeWidth="28"
               strokeLinecap="round"
-              strokeDasharray="120 80"
+              strokeDasharray="240 160"
               initial={{ strokeDashoffset: 0 }}
               animate={{ strokeDashoffset: -horizontalOffset }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: animationDuration, repeat: Infinity, ease: "linear" }}
             />
 
             {/* Right line */}
@@ -62,12 +67,12 @@ const Photo = () => {
               x2={originalWidth}
               y2={originalHeight}
               stroke="var(--color-accent)"
-              strokeWidth="12"
+              strokeWidth="28"
               strokeLinecap="round"
-              strokeDasharray="120 80"
+              strokeDasharray="240 160"
               initial={{ strokeDashoffset: 0 }}
               animate={{ strokeDashoffset: -verticalOffset }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: animationDuration, repeat: Infinity, ease: "linear" }}
             />
 
             {/* Bottom line */}
@@ -77,12 +82,12 @@ const Photo = () => {
               x2="0"
               y2={originalHeight}
               stroke="var(--color-accent)"
-              strokeWidth="12"
+              strokeWidth="28"
               strokeLinecap="round"
-              strokeDasharray="120 80"
+              strokeDasharray="240 160"
               initial={{ strokeDashoffset: 0 }}
               animate={{ strokeDashoffset: -horizontalOffset }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: animationDuration, repeat: Infinity, ease: "linear" }}
             />
 
             {/* Left line */}
@@ -92,12 +97,12 @@ const Photo = () => {
               x2="0"
               y2="0"
               stroke="var(--color-accent)"
-              strokeWidth="12"
+              strokeWidth="28"
               strokeLinecap="round"
-              strokeDasharray="120 80"
+              strokeDasharray="240 160"
               initial={{ strokeDashoffset: 0 }}
               animate={{ strokeDashoffset: -verticalOffset }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: animationDuration, repeat: Infinity, ease: "linear" }}
             />
           </motion.svg>
         </div>

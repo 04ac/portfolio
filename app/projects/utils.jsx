@@ -35,7 +35,7 @@ const projects = [
     title: "Konkan Rail Train Status",
     description: "Flutter app which shows live data on running trains from the Konkan Railway API.",
     tech: ["Flutter", "REST API", "Dart"],
-    image: "/assets/image.png",
+    image: "/assets/konkan-2.png",
     githubLink: "https://github.com/04ac/konkan-rail-train-status",
     date: "October 2023"
   },

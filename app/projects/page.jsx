@@ -36,14 +36,14 @@ const ProjectCard = ({ title, description, tech, image, githubLink, liveLink, co
       <div className="flex gap-3 mt-4">
         {githubLink && (
           <a href={githubLink} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-transparent hover:bg-[var(--color-accent)] text-[var(--color-accent)] hover:text-[var(--color-primary)] border border-[var(--color-accent)] transition-all">
+            <Button className="bg-transparent hover:bg-[var(--color-accent)] active:bg-[var(--color-accent)] text-[var(--color-accent)] hover:text-[var(--color-primary)] active:text-[var(--color-primary)] border border-[var(--color-accent)] transition-all">
               <FaGithub className="mr-2" /> Code
             </Button>
           </a>
         )}
         {liveLink && (
           <a href={liveLink} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-[var(--color-accent)] hover:bg-transparent text-[var(--color-primary)] hover:text-[var(--color-accent)] border border-[var(--color-accent)] transition-all">
+            <Button className="bg-[var(--color-accent)] hover:bg-transparent active:bg-transparent text-[var(--color-primary)] hover:text-[var(--color-accent)] active:text-[var(--color-accent)] border border-[var(--color-accent)] transition-all">
               <FaExternalLinkAlt className="mr-2" /> Live
             </Button>
           </a>
@@ -57,7 +57,7 @@ const Projects = () => {
   return (
     <main className="min-h-[calc(100vh-8rem)] w-full @container
      px-4 py-6 flex flex-col items-center gap-y-8">
-      <h1 className='text-3xl font-bold'><span className='text-[var(--color-accent)]'>My</span> Projects</h1>
+      <h1 className='text-3xl font-bold'><span className='text-[var(--color-accent)]'>P</span>rojects</h1>
       {
         projects.map((item, index) => {
           return <ProjectCard

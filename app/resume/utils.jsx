@@ -49,7 +49,9 @@ const subPages = [
     name: "Experience",
     component:
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-3xl font-extrabold mb-2">Experience</h1>
+        <h1 className="text-3xl font-extrabold mb-2">
+          <span className='text-[var(--color-accent)]'>E</span>xperience
+        </h1>
         <ResumeGrid>
           <ResumeCard>
             <div className="flex justify-between items-center mb-2">
@@ -82,7 +84,9 @@ const subPages = [
             </ul>
           </ResumeCard>
         </ResumeGrid>
-        <h1 className="text-3xl font-extrabold mb-2 mt-4">Volunteering</h1>
+        <h1 className="text-3xl font-extrabold mb-2 mt-4">
+          <span className='text-[var(--color-accent)]'>V</span>olunteering
+        </h1>
         <ResumeGrid>
           <ResumeCard>
             <div className="flex justify-between items-center mb-2">
@@ -102,7 +106,9 @@ const subPages = [
     name: "Education",
     component:
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-3xl font-extrabold mb-2">Education</h1>
+        <h1 className="text-3xl font-extrabold mb-2">
+          <span className='text-[var(--color-accent)]'>E</span>ducation
+        </h1>
         <ResumeGrid>
           {/* Education Card 1 */}
           <ResumeCard>
@@ -127,7 +133,10 @@ const subPages = [
           </ResumeCard>
         </ResumeGrid>
 
-        <h1 className="text-3xl font-extrabold mb-2 mt-4">Certificates</h1>
+        <h1 className="text-3xl font-extrabold mb-2 mt-4">
+          <span className='text-[var(--color-accent)]'>
+            C</span>ertificates
+          </h1>
         <ResumeGrid>
           <ResumeCard>
             <h3 className="font-bold text-xl mb-4">Introduction to Databases for Back-End Development</h3>
@@ -174,7 +183,7 @@ const subPages = [
       <section className="pt-2 pb-4">
         <div className="@container mx-auto">
           <h1 className="text-3xl font-bold text-center mb-12">
-            Tech I've worked with
+            <span className='text-[var(--color-accent)]'>T</span>ech I've worked with
           </h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 place-items-center">
             <SkillIcon icon={<SiFlutter />} label="Flutter" />
