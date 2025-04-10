@@ -38,7 +38,6 @@ export function ThemeProvider({ children }) {
     Cookies.set('portfolio-theme', JSON.stringify(theme), { expires: 30 });
     if (text) Cookies.set('portfolio-theme-text', text, { expires: 30 });
 
-    // Load both heading and body fonts if they exist
     if (theme['--font-heading']) {
       loadFont(theme['--font-heading']);
     }

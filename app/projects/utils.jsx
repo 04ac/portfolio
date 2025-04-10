@@ -11,7 +11,7 @@ const projects = [
     description: "My personal portfolio website built with Next.js and featuring dynamic theme customization.",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Gemini API"],
     image: "/assets/portfolio.png",
-    // githubLink: "https://github.com/04ac/portfolio-website-next",
+    githubLink: "https://github.com/04ac/portfolio-website-next",
     liveLink: "https://areen.vercel.app"
   },
   {

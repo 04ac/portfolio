@@ -6,7 +6,9 @@ import { Button } from '@/components/ui/button';
 import { projects } from './utils';
 import Image from 'next/image';
 
-const ProjectCard = ({ title, description, tech, image, githubLink, liveLink, contain = false }) => {
+const ProjectCard = ({ item }) => {
+  const { title, description, tech, image, githubLink, liveLink, contain = false } = item;
+
   return (
     <motion.div 
       className='border border-[var(--color-accent)] rounded-lg shadow-md
@@ -27,9 +29,9 @@ const ProjectCard = ({ title, description, tech, image, githubLink, liveLink, co
       <h3 className="text-xl font-bold my-4 text-[var(--color-accent)] mx-1">{title}</h3>
       <p className="text-sm text-[var(--color-text)]/80 mx-1">{description}</p>
       <div className="flex flex-wrap gap-2 my-5">
-        {tech.map((item, index) => (
+        {tech.map((ele, index) => (
           <span key={index} className="text-xs px-3 py-1 rounded-full bg-[var(--color-accent)]/20 text-[var(--color-accent)]">
-            {item}
+            {ele}
           </span>
         ))}
       </div>
@@ -62,13 +64,7 @@ const Projects = () => {
         projects.map((item, index) => {
           return <ProjectCard
             key={index}
-            title={item.title}
-            description={item.description}
-            tech={item.tech}
-            image={item.image}
-            githubLink={item.githubLink}
-            liveLink={item.liveLink}
-            contain={item.contain}
+            item={item}
           />
         })
       }

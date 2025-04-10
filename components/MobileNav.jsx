@@ -19,9 +19,6 @@ const MobileNav = () => {
         <nav className="flex flex-col justify-center items-center gap-8">
           <SheetClose asChild>
             <Link href="/">
-              {/* <h1 className="text-3xl font-semibold mt-32 mb-20">
-              Areen<span className="text-[var(--color-accent)]">.</span>
-              </h1> */}
               <h1 className="text-4xl font-semibold mt-32 mb-20">
                 <span className="text-[var(--color-accent)] text-5xl">A</span>reen
               </h1>

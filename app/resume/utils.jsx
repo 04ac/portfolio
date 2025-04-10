@@ -1,5 +1,5 @@
 import { complex, motion } from "framer-motion";
-import { FaReact, FaPython, FaJava } from "react-icons/fa";
+import { FaReact, FaPython, FaJava, FaAndroid } from "react-icons/fa";
 import { SiFlutter, SiDart, SiKotlin, SiNextdotjs, SiFirebase, SiAmazonwebservices, SiJavascript, SiPostgresql, SiMongodb, SiExpress, SiFastapi, SiCplusplus, SiDjango, SiTailwindcss } from "react-icons/si";
 
 const ResumeCard = ({ children }) => {
@@ -180,28 +180,44 @@ const subPages = [
   {
     name: "Skills",
     component: (
-      <section className="pt-2 pb-4">
+        <section className="pt-2 pb-4">
         <div className="@container mx-auto">
-          <h1 className="text-3xl font-bold text-center mb-12">
+          <h1 className="text-3xl font-bold text-center mb-8">
             <span className='text-[var(--color-accent)]'>T</span>ech I've worked with
           </h1>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 place-items-center">
-            <SkillIcon icon={<SiFlutter />} label="Flutter" />
-            <SkillIcon icon={<SiDart />} label="Dart" />
-
+          
+          {/* Languages */}
+          <h2 className="text-xl font-semibold mb-6 text-center">Languages</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mb-12">
+            <SkillIcon icon={<SiCplusplus />} label="C++" />
             <SkillIcon icon={<FaPython />} label="Python" />
             <SkillIcon icon={<FaJava />} label="Java" />
-            <SkillIcon icon={<SiCplusplus />} label="C++" />
+            <SkillIcon icon={<SiDart />} label="Dart" />
             <SkillIcon icon={<SiKotlin />} label="Kotlin" />
-            <SkillIcon icon={<SiTailwindcss />} label="Tailwind CSS" />
             <SkillIcon icon={<SiJavascript />} label="JavaScript" />
-            <SkillIcon icon={<FaReact />} label="React.js" />
-            <SkillIcon icon={<SiNextdotjs />} label="Next.js" />
-
-            <SkillIcon icon={<SiExpress />} label="Express.js" />
+          </div>
+          
+          {/* Mobile */}
+          <h2 className="text-xl font-semibold mb-6 text-center">Mobile Development</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mb-12">
+            <SkillIcon icon={<SiFlutter />} label="Flutter" />
+            <SkillIcon icon={<FaAndroid />} label="Android" />
+          </div>
+          
+          {/* Web */}
+          <h2 className="text-xl font-semibold mb-6 text-center">Web Development</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mb-12">
             <SkillIcon icon={<SiFastapi />} label="FastAPI" />
             <SkillIcon icon={<SiDjango />} label="Django" />
-
+            <SkillIcon icon={<SiTailwindcss />} label="Tailwind CSS" />
+            <SkillIcon icon={<FaReact />} label="React.js" />
+            <SkillIcon icon={<SiNextdotjs />} label="Next.js" />
+            <SkillIcon icon={<SiExpress />} label="Express.js" />
+          </div>
+          
+          {/* Cloud Services */}
+          <h2 className="text-xl font-semibold mb-6 text-center">Cloud Services</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mb-6">
             <SkillIcon icon={<SiFirebase />} label="Firebase" />
             <SkillIcon icon={<SiAmazonwebservices />} label="AWS EC2" />
           </div>

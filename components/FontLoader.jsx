@@ -21,13 +21,12 @@ const FontLoader = () => {
 
         // Retrieve the saved theme from cookies
         const themeCookie = Cookies.get("portfolio-theme");
-        let theme = sampleThemes[1].theme; // sample theme for fallback
+        let theme = sampleThemes[1].theme;
 
         if (themeCookie) {
             try {
                 theme = JSON.parse(themeCookie);
 
-                // Load heading and body fonts
                 if (theme["--font-heading"]) {
                     loadFont(theme["--font-heading"]);
                 }
@@ -60,7 +59,6 @@ const FontLoader = () => {
             font-family: ${theme['--font-heading'] || 'var(--font-robotoMono)'};
           }
         `;
-
     }, []);
 
     return null;

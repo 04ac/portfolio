@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
       <head>
         <ThemeStyleInjector />
       </head>
-      <body className="">
+      <body>
         <ThemeProvider>
           <>
             <FontLoader />
