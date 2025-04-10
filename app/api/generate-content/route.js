@@ -50,7 +50,6 @@ export async function POST(req) {
 
     console.log("Raw response:", rawText);
 
-    // Extract the JSON from the response
     let jsonObject;
 
     // First, try to parse the response directly
@@ -84,7 +83,6 @@ export async function POST(req) {
       }
     }
 
-    // Return the parsed JSON object
     return NextResponse.json(jsonObject);
   } catch (error) {
     console.error("Error generating theme:", error);
