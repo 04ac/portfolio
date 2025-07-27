@@ -55,6 +55,17 @@ const subPages = [
         <ResumeGrid>
           <ResumeCard>
             <div className="flex justify-between items-center mb-2">
+              <h3 className="font-bold text-xl">Summer Analyst (SDE Intern)</h3>
+              <span className="text-sm text-muted-foreground pl-2 text-right">May–Jul 2025</span>
+            </div>
+            <h4 className="text-[var(--color-accent)] font-medium mb-3">Goldman Sachs</h4>
+            <ul className="list-disc pl-5 space-y-2 text-sm">
+              <li>Automated quarterly reporting workflow with data transformations using AWS Glue Jobs (Spark), integrating Snowflake and on-prem databases.</li>
+              <li>Eliminated 5 manual handoffs and improved delivery timelines by 2x.</li>
+            </ul>
+          </ResumeCard>
+          <ResumeCard>
+            <div className="flex justify-between items-center mb-2">
               <h3 className="font-bold text-xl">Software Intern</h3>
               <span className="text-sm text-muted-foreground pl-2 text-right">June-Aug 2024</span>
             </div>
