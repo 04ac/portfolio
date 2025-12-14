@@ -18,7 +18,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="max-w-[500px] text-[var(--color-text)]/80">
-              The best solutions happen where creativity meets technical expertise — and that's what drives my work
+              The best solutions happen where creativity meets technical expertise, and that's what drives my work
             </p>
             {/* control panel btn */}
             <Link href="/control-panel">
